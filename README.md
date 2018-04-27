@@ -18,27 +18,34 @@ In this project, I will introduce one of the best password cracker – John the 
 
 ## Installing
 Install MPI
-```sudo apt-get install libcr-dev mpich2 mpich2-doc```
+```sudo apt-get install libcr-dev mpich2 mpich2-doc
+```
 
 Install OpenCL
-```sudo apt install ocl-icd-opencl-dev```
+```sudo apt install ocl-icd-opencl-dev
+```
 
 Building John the Ripper with OpenSSL
-#export number of core you want to running John the Ripper
-```export N=number_of_core```
+Replace number_of_cores by one of cores you want to running John the Ripper
+```export N=number_of_cores
+```
 
 #execute file
-```chmod +x Build_Johntheripper.sh Build_Johntheripper```
+```chmod +x Build_Johntheripper.sh Build_Johntheripper
+```
 
 #Building Cracking Programe
-```bash Build_Johntheripper```
+```bash Build_Johntheripper
+```
 
 ## Testing
-#Go to run directory
-```cd $HOME/Ripper/JohnTheRipper/run```
+Go to run directory
+```cd $HOME/Ripper/JohnTheRipper/run
+```
 
 Check the efficiency of John on your system by running it in test mode
-```mpirun -np ${N} ./john -test```
+```mpirun -np ${N} ./john -test
+```
 
 #compare eficiency of system with different cores
 ```mpirun -np 2 ./john --test=10 --format=raw-sha1-linkedin
@@ -46,13 +53,13 @@ mpirun -np 4 ./john --test=10 --format=raw-sha1-linkedin
 ```
 
 ## Recover a forgotten password
-##taking hashing password from system
+Taking hashing password from system
 ```sudo unshadow /etc/passwd /etc/shadow > passfile2.txt
 mpirun -np ${N} ./john --wordlist=combo_not.txt passfile2.txt
 ```
 
 ## Checking crackable password
-##input password want to check
+Replace your_password by password you like to check
 ```export passwd=your_password
 chmod +x Build_Mkpasswd.sh Build_Mkpasswd
 bash Build_Mkpasswd
