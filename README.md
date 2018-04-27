@@ -16,6 +16,8 @@ In this project, I will introduce one of the best password cracker – John the 
 - OpenMPI.
 - OpenCL.
 
+## Hardware
+
 ## Installing
 Install MPI
 ```sudo apt-get install libcr-dev mpich2 mpich2-doc
