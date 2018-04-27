@@ -77,6 +77,6 @@ chmod +x Build_Mkpasswd.sh Build_Mkpasswd
 bash Build_Mkpasswd
 ```
 ## Example result
-### For Recover a forgotten password
+#### For Recover a forgotten password
 
-### For checking crackable password
+#### For checking crackable password
