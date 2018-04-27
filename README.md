@@ -7,12 +7,50 @@ Password cracking is process of recovering passwords from data that have been st
 
 The useful of password cracker: can use to recover a forgotten password, gaining unauthorized access to a system or checking for easily crackable passwords.
 
-In this project, I will introduce one of the best password cracker – John the Ripper,its installation tutorial with GPU and how it useful in crackable password checking.
+In this project, I will introduce one of the best password cracker – John the Ripper,its installation on parallel and how to run it for recover and checking crackable password purposes.
 
-### Prerequisites
+## Prerequisites
 - OpenSSL.
-- Cuda.
 - GCC.
 - John-1.8.0
-- OpenMPI
+- OpenMPI.
+- OpenCL.
 
+## Installing
+Install MPI
+sudo apt-get install libcr-dev mpich2 mpich2-doc
+
+Install OpenCL
+sudo apt install ocl-icd-opencl-dev
+
+Building John the Ripper with OpenSSL
+#export number of core you want to running John the Ripper
+export N=number_of_core
+
+#execute file
+chmod +x Build_Johntheripper.sh Build_Johntheripper
+
+#Building Cracking Programe
+bash Build_Johntheripper
+
+## Testing
+#Go to run directory
+cd $HOME/Ripper/JohnTheRipper/run
+
+Check the efficiency of John on your system by running it in test mode
+mpirun -np ${N} ./john -test
+
+#compare eficiency of system with different cores
+mpirun -np 2 ./john --test=10 --format=raw-sha1-linkedin
+mpirun -np 4 ./john --test=10 --format=raw-sha1-linkedin
+
+## Recover a forgotten password
+##taking hashing password from system
+sudo unshadow /etc/passwd /etc/shadow > passfile2.txt
+mpirun -np ${N} ./john --wordlist=combo_not.txt passfile2.txt
+
+## Checking crackable password
+##input password want to check
+export passwd=your_password
+chmod +x Build_Mkpasswd.sh Build_Mkpasswd
+bash Build_Mkpasswd
