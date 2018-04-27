@@ -37,12 +37,12 @@ export N=number_of_cores
 
 Execute file
 ```
-chmod +x Build_Johntheripper.sh Build_Johntheripper
+chmod +x Build_Johntheripper.sh
 ```
 
 Building Cracking Programe
 ```
-bash Build_Johntheripper
+bash Build_Johntheripper.sh
 ```
 
 ## Testing
@@ -73,8 +73,8 @@ mpirun -np ${N} ./john --wordlist=combo_not.txt passfile2.txt
 Replace your_password by password you like to check
 ```
 export passwd=your_password
-chmod +x Build_Mkpasswd.sh Build_Mkpasswd
-bash Build_Mkpasswd
+chmod +x Build_Mkpasswd.sh
+bash Build_Mkpasswd.sh
 ```
 ## Example result
 #### For Recover a forgotten password
