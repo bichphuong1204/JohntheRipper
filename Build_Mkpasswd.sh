@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #install mkpasswd
-sudo apt-get whois
+sudo apt-get install whois
 
 #create password file
 cd $HOME/Ripper/JohnTheRipper/run
