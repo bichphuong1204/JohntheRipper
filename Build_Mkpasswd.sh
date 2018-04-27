@@ -7,6 +7,9 @@ sudo apt-get install whois
 cd $HOME/Ripper/JohnTheRipper/run
 touch passfile.txt
 
+#clear all text in file
+echo "" > passfile.txt
+
 #hash your password using different hashing algorithm
 echo -n ${passwd}: ; mkpasswd -m md5 ${passwd} >>passfile.txt 
 echo -n ${passwd}: ; mkpasswd -m des ${passwd} >>passfile.txt 
@@ -15,6 +18,7 @@ echo -n ${passwd}: ; mkpasswd -m sha-512 ${passwd} >>passfile.txt
 
 #create a running script file
 touch running.sh
+echo "" > running.sh
 
 #Running with different re-encrypt format
 echo 'mpirun -np ${N} ./john --format=aix-smd5 --show passfile.txt' >>running.sh
