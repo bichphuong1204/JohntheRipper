@@ -20,33 +20,26 @@ In this project, I will introduce one of the best password cracker – John the 
 Install MPI
 ```sudo apt-get install libcr-dev mpich2 mpich2-doc
 ```
-
 Install OpenCL
 ```sudo apt install ocl-icd-opencl-dev
 ```
-
 Building John the Ripper with OpenSSL
 Replace number_of_cores by one of cores you want to running John the Ripper
 ```export N=number_of_cores
 ```
-
-#execute file
+execute file
 ```chmod +x Build_Johntheripper.sh Build_Johntheripper
 ```
-
-#Building Cracking Programe
+Building Cracking Programe
 ```bash Build_Johntheripper
 ```
-
 ## Testing
 Go to run directory
 ```cd $HOME/Ripper/JohnTheRipper/run
 ```
-
 Check the efficiency of John on your system by running it in test mode
 ```mpirun -np ${N} ./john -test
 ```
-
 #compare eficiency of system with different cores
 ```mpirun -np 2 ./john --test=10 --format=raw-sha1-linkedin
 mpirun -np 4 ./john --test=10 --format=raw-sha1-linkedin
