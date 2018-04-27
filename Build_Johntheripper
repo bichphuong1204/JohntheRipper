@@ -1,0 +1,44 @@
+#!/bin/bash
+
+export RipperDIR=Ripper
+# Go to home directory
+cd $HOME
+# Make a source directory
+mkdir $RipperDIR
+# Go into the source directory
+cd $RipperDIR
+# Get openssl
+wget https://www.openssl.org/source/openssl-1.0.2o.tar.gz
+tar -xvf openssl-1.0.2o.tar.gz
+cd openssl-1.0.2o
+./config --prefix=${HOME}/${RipperDIR}/openssl --openssldir=${HOME}/${RipperDIR}/openssl --shared threads -D_REENTRANT
+make
+make install
+cd ..
+
+# Get the password testing program
+git clone https://github.com/magnumripper/JohnTheRipper
+
+# Go into the source directory
+cd JohnTheRipper
+cd src
+
+# Build the source code
+./configure CC="/usr/bin/gcc" PKG_CONFIG_PATH="${HOME}/${RipperDIR}/openssl/lib/pkgconfig" LDFLAGS="-L${HOME}/${RipperDIR}/openssl/lib -lssl -lcrypto" CFLAGS="-I${HOME}/${RipperDIR}openssl/include" --enable-mpi --enable-opencl --disable-cuda
+
+make -s clean && make -sj4
+
+# Go into the binary directory
+cd ..
+cd run
+
+#get the dictionary for hash compare
+git clone https://github.com/hungtruong/LinkedIn-Password-Checker
+cp LinkedIn-Password-Checker/combo_not.txt .
+
+
+
+
+
+
+
