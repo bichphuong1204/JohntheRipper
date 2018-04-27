@@ -76,3 +76,4 @@ export passwd=your_password
 chmod +x Build_Mkpasswd.sh Build_Mkpasswd
 bash Build_Mkpasswd
 ```
+## Example result
