@@ -84,6 +84,11 @@ Install OpenCL
 sudo apt install ocl-icd-opencl-dev
 ```
 
+Install mkpasswd
+```
+sudo apt-get install whois
+```
+
 Building John the Ripper with OpenSSL
 Replace number_of_cores by one of cores you want to running John the Ripper
 ```
