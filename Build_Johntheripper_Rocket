@@ -1,0 +1,46 @@
+#!/bin/bash
+
+# Load appropriate modules
+module purge
+module load gcc-5.2.0
+module load cuda/9.0
+module load openmpi-2.1.0
+
+export RipperDIR=RipperGPU
+# Go to home directory
+cd $HOME
+# Make a source directory
+mkdir $RipperDIR
+# Go into the source directory
+cd $RipperDIR
+# Get openssl
+wget https://www.openssl.org/source/openssl-1.0.2o.tar.gz
+tar -xvf openssl-1.0.2o.tar.gz
+cd openssl-1.0.2o
+./config --prefix=${HOME}/${RipperDIR}/openssl --openssldir=${HOME}/${RipperDIR}/openssl --shared threads -D_REENTRANT
+make
+make install
+cd ..
+# Get the password testing program
+wget www.openwall.com/john/j/john-1.8.0-jumbo-1.tar.gz
+# Decompress the password testing program sources
+tar -xvf john-1.8.0-jumbo-1.tar.gz
+# Go into the source directory
+cd john-1.8.0-jumbo-1
+cd src
+# Modify the source code so that it builds correctly
+# done following https://blackcatsoftware.us/john-the-ripper-jumbo-1-8-0-compilemake-fails-in-fedora-25-gcc5/
+sed '482 c //#ifdef __x86_64__' MD5_std.c > MD5_std.out.c
+sed '483 c //#define MAYBE_INLINE_BODY MAYBE_INLINE' MD5_std.out.c > MD5_std.c
+sed '484 c //#else' MD5_std.out.c > MD5_std.c
+sed '486 c //#endif' MD5_std.c > MD5_std.out.c
+rm MD5_std.c
+mv MD5_std.out.c MD5_std.c
+# Build the source code
+./configure  CC="/storage/software/gcc-5.2.0/bin/gcc" PKG_CONFIG_PATH="${HOME}/${RipperDIR}/openssl/lib/pkgconfig" LDFLAGS="-L/storage/software/cuda/9.0/lib64 -L${HOME}/${RipperDIR}/openssl/lib/"
+OPENSSL_LIBS="-L${HOME}/${RipperDIR}/openssl/lib -lssl -lcrypto" CFLAGS="-I/storage/software/cuda/9.0/include/" --enable-opencl --enable-mpi --disable-cuda
+make
+# Go into the binary directory
+cd ..
+cd run
+
