@@ -132,6 +132,20 @@ chmod +x Build_Mkpasswd.sh
 bash Build_Mkpasswd.sh
 ```
 ### Example result
-#### For Recover a forgotten password
-#### For checking crackable password
+```
+Using default input encoding: UTF-8
+Loaded 1 password hash (md5crypt, crypt(3) $1$ [MD5 256/256 AVX2 8x3])
+MPI in use, disabling OMP (see doc/README.mpi)
+Node numbers 1-4 of 4 (MPI)
+Send SIGUSR1 to mpirun for status
+banana           (?)
+1 1g 0:00:00:00 DONE 2/3 (2018-04-29 02:26) 3.448g/s 2648p/s 2648c/s 2648C/s leslie..bigben
+Waiting for other nodes to terminate
+3 0g 0:00:00:08 DONE 2/3 (2018-04-29 02:27) 0g/s 3251p/s 3251c/s 3251C/s Trapper4..Zephyr?
+2 0g 0:00:00:08 DONE 2/3 (2018-04-29 02:27) 0g/s 2921p/s 2921c/s 2921C/s Huey!..Disney7
+4 0g 0:00:00:08 DONE 2/3 (2018-04-29 02:27) 0g/s 2906p/s 2906c/s 2906C/s Black9..Jack9
+
+```
+
+
 
