@@ -54,6 +54,22 @@ Can be run against various encryptedpassword formats including several crypt pas
 - OpenMPI.
 - OpenCL.
 
+## Running John Benchmark
+### Hardware
+2 nodes, each node : 2 x Intel(R) Xeon(R) CPU E5-2660 v2 @ 2.20GHz (20 cores total)
+NVIDIA Tesla P100 GPU
+### Install and running
+```
+bash Build_Johntheripper_Rocket
+```
+### Result
+#### For 2 Nodes (20 cores in total)
+
+#### For 4 Nodes (40 core in total)
+
+#### For 2 Nodes (20 cores) and 1 GPU
+
+
 ## Building on small cluster for cracking process
 ### Hardware
 
@@ -119,17 +135,3 @@ bash Build_Mkpasswd.sh
 #### For Recover a forgotten password
 #### For checking crackable password
 
-## Running John Benchmark
-### Hardware
-2 nodes, each node : 2 x Intel(R) Xeon(R) CPU E5-2660 v2 @ 2.20GHz (20 cores total)
-NVIDIA Tesla P100 GPU
-### Install and running
-```
-bash Build_Johntheripper_Rocket
-```
-### Result
-#### For 2 Nodes (20 cores in total)
-
-#### For 4 Nodes (40 core in total)
-
-#### For 2 Nodes (20 cores) and 1 GPU
