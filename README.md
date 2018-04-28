@@ -16,9 +16,10 @@ In this project, I will introduce one of the best password cracker – John the 
 - OpenMPI.
 - OpenCL.
 
-## Hardware
+## Building on small cluster for cracking process
+### Hardware
 
-## Installing
+### Installing
 Install MPI
 ```
 sudo apt-get install libcr-dev mpich2 mpich2-doc
@@ -45,7 +46,7 @@ Building Cracking Programe
 bash Build_Johntheripper.sh
 ```
 
-## Testing
+### Testing
 Go to run directory
 ```
 cd $HOME/Ripper/JohnTheRipper/run
@@ -62,21 +63,35 @@ mpirun -np 2 ./john --test=10 --format=raw-sha1-linkedin
 mpirun -np 4 ./john --test=10 --format=raw-sha1-linkedin
 ```
 
-## Recover a forgotten password
+### Recover a forgotten password
 Taking hashing password from system
 ```
 sudo unshadow /etc/passwd /etc/shadow > passfile2.txt
 mpirun -np ${N} ./john --wordlist=combo_not.txt passfile2.txt
 ```
 
-## Checking crackable password
+### Checking crackable password
 Replace your_password by password you like to check
 ```
 export passwd=your_password
 chmod +x Build_Mkpasswd.sh
 bash Build_Mkpasswd.sh
 ```
-## Example result
+### Example result
 #### For Recover a forgotten password
-
 #### For checking crackable password
+
+## Running John Benchmark
+### Hardware
+2 nodes, each node : 2 x Intel(R) Xeon(R) CPU E5-2660 v2 @ 2.20GHz (20 cores total)
+NVIDIA Tesla P100 GPU
+### Install and running
+```
+bash Build_Johntheripper_Rocket
+```
+### Result
+#### For 2 Nodes (20 cores in total)
+
+#### For 4 Nodes (40 core in total)
+
+#### For 2 Nodes (20 cores) and 1 GPU
