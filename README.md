@@ -8,6 +8,7 @@ Password cracking is process of recovering passwords from data that have been st
 The useful of password cracker: can use to recover a forgotten password, gaining unauthorized access to a system or checking for easily crackable passwords.
 
 In this project, I will introduce one of the best password cracker – John the Ripper,its installation and how to run it on parallel for recover and checking crackable password purposes.
+
 ## Principle
 
 ### Hashing password
@@ -71,8 +72,6 @@ bash Build_Johntheripper_Rocket
 
 
 ## Building on small cluster for cracking process
-### Hardware
-
 ### Installing
 Install MPI
 ```
