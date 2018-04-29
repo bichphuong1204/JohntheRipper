@@ -65,9 +65,101 @@ bash Build_Johntheripper_Rocket
 ```
 ### Result
 #### For 2 Nodes (20 cores in total)
+```
+Node numbers 1-16 of 16 (MPI)
+Benchmarking: descrypt, traditional crypt(3) [DES 128/128 AVX-16]... (16xMPI) /^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^HDONE
+Many salts:     52797K c/s real, 53330K c/s virtual
+Only one salt:  49692K c/s real, 49692K c/s virtual
 
-#### For 4 Nodes (40 core in total)
+Benchmarking: bsdicrypt, BSDI crypt(3) ("_J9..", 725 iterations) [DES 128/128 AVX-16]... (16xMPI) /^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^HDONE
+Many salts:     1867K c/s real, 1867K c/s virtual
+Only one salt:  1724K c/s real, 1742K c/s virtual
 
+Benchmarking: md5crypt, crypt(3) $1$ [MD5 128/128 AVX 12x]... (16xMPI) -^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^HDONE
+Raw:    473664 c/s real, 473664 c/s virtual
+
+Benchmarking: bcrypt ("$2a$05", 32 iterations) [Blowfish 32/64 X3]... (16xMPI) -^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^HDONE
+Raw:    2780 c/s real, 2780 c/s virtual
+
+Benchmarking: scrypt (16384, 8, 1) [Salsa20/8 128/128 AVX]... (16xMPI) -^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^H-^HDONE
+Raw:    44.0 c/s real, 44.0 c/s virtual
+```
+```
+Node numbers 1-32 of 32 (MPI)
+Benchmarking: descrypt, traditional crypt(3) [DES 128/128 AVX-16]... (32xMPI) /^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^HDONE
+Many salts:     108462K c/s real, 109557K c/s virtual
+Only one salt:  107921K c/s real, 107921K c/s virtual
+
+Benchmarking: bsdicrypt, BSDI crypt(3) ("_J9..", 725 iterations) [DES 128/128 AVX-16]... (32xMPI) /^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^HDONE
+Many salts:     3920K c/s real, 3920K c/s virtual
+Only one salt:  3639K c/s real, 3676K c/s virtual
+
+Benchmarking: md5crypt, crypt(3) $1$ [MD5 128/128 AVX 12x]... (32xMPI) -^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^HDONE
+Raw:    1019K c/s real, 1029K c/s virtual
+
+Benchmarking: bcrypt ("$2a$05", 32 iterations) [Blowfish 32/64 X3]... (32xMPI) -^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^HDONE
+Raw:    6048 c/s real, 6048 c/s virtual
+
+Benchmarking: scrypt (16384, 8, 1) [Salsa20/8 128/128 AVX]... (32xMPI) -^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^H-^HDONE
+Raw:    96.6 c/s real, 96.6 c/s virtual
+```
+```
+Node numbers 1-64 of 64 (MPI)
+Benchmarking: descrypt, traditional crypt(3) [DES 128/128 AVX-16]... (64xMPI) /^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^HDONE
+Many salts:     210558K c/s real, 212685K c/s virtual
+Only one salt:  212869K c/s real, 215019K c/s virtual
+
+Benchmarking: bsdicrypt, BSDI crypt(3) ("_J9..", 725 iterations) [DES 128/128 AVX-16]... (64xMPI) /^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^HDONE
+Many salts:     7974K c/s real, 7974K c/s virtual
+Only one salt:  7450K c/s real, 7526K c/s virtual
+
+Benchmarking: md5crypt, crypt(3) $1$ [MD5 128/128 AVX 12x]... (64xMPI) -^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^HDONE
+Raw:    2057K c/s real, 2057K c/s virtual
+
+Benchmarking: bcrypt ("$2a$05", 32 iterations) [Blowfish 32/64 X3]... (64xMPI) -^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^HDONE
+Raw:    12096 c/s real, 12096 c/s virtual
+
+Benchmarking: scrypt (16384, 8, 1) [Salsa20/8 128/128 AVX]... (64xMPI) -^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^H-^HDONE
+Raw:    192 c/s real, 194 c/s virtual
+```
+```
+Node numbers 1-128 of 128 (MPI)
+Benchmarking: descrypt, traditional crypt(3) [DES 128/128 AVX-16]... (128xMPI) /^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^HDONE
+Many salts:     408031K c/s real, 412152K c/s virtual
+Only one salt:  408686K c/s real, 412814K c/s virtual
+
+Benchmarking: bsdicrypt, BSDI crypt(3) ("_J9..", 725 iterations) [DES 128/128 AVX-16]... (128xMPI) /^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^HDONE
+Many salts:     15388K c/s real, 15388K c/s virtual
+Only one salt:  14398K c/s real, 14398K c/s virtual
+
+Benchmarking: md5crypt, crypt(3) $1$ [MD5 128/128 AVX 12x]... (128xMPI) -^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^HDONE
+Raw:    3995K c/s real, 3995K c/s virtual
+
+Benchmarking: bcrypt ("$2a$05", 32 iterations) [Blowfish 32/64 X3]... (128xMPI) -^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^HDONE
+Raw:    23418 c/s real, 23418 c/s virtual
+
+Benchmarking: scrypt (16384, 8, 1) [Salsa20/8 128/128 AVX]... (128xMPI) -^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^H-^HDONE
+Raw:    380 c/s real, 380 c/s virtual
+```
+```
+Node numbers 1-256 of 256 (MPI)
+Benchmarking: descrypt, traditional crypt(3) [DES 128/128 AVX-16]... (256xMPI) /^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^HDONE
+Many salts:     822796K c/s real, 831107K c/s virtual
+Only one salt:  821035K c/s real, 821035K c/s virtual
+
+Benchmarking: bsdicrypt, BSDI crypt(3) ("_J9..", 725 iterations) [DES 128/128 AVX-16]... (256xMPI) /^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^HDONE
+Many salts:     30845K c/s real, 30845K c/s virtual
+Only one salt:  28813K c/s real, 28813K c/s virtual
+
+Benchmarking: md5crypt, crypt(3) $1$ [MD5 128/128 AVX 12x]... (256xMPI) -^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^HDONE
+Raw:    7925K c/s real, 7925K c/s virtual
+
+Benchmarking: bcrypt ("$2a$05", 32 iterations) [Blowfish 32/64 X3]... (256xMPI) -^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^HDONE
+Raw:    46395 c/s real, 46395 c/s virtual
+
+Benchmarking: scrypt (16384, 8, 1) [Salsa20/8 128/128 AVX]... (256xMPI) -^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^H-^HDONE
+Raw:    757 c/s real, 757 c/s virtual
+```
 #### For 2 Nodes (20 cores) and 1 GPU
 
 
@@ -149,6 +241,13 @@ Waiting for other nodes to terminate
 2 0g 0:00:00:08 DONE 2/3 (2018-04-29 02:27) 0g/s 2921p/s 2921c/s 2921C/s Huey!..Disney7
 4 0g 0:00:00:08 DONE 2/3 (2018-04-29 02:27) 0g/s 2906p/s 2906c/s 2906C/s Black9..Jack9
 
+```
+```
+MPI in use, disabling OMP (see doc/README.mpi)
+Node numbers 1-40 of 40 (MPI)
+/^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H ^HSend SIGUSR1 to mpirun for status
+phuong           (?)
+22 1g 0:00:14:07 DONE 3/3 (2018-04-29 02:54) 0.001179g/s 454.7p/s 454.7c/s 454.7C/s phevu*..phuork
 ```
 ## Conclusion
 
