@@ -64,7 +64,67 @@ NVIDIA Tesla P100 GPU
 bash Build_Johntheripper_Rocket
 ```
 ### Result
-#### For 2 Nodes (20 cores in total)
+#### 2 cores
+```
+Node numbers 1-2 of 2 (MPI)
+Benchmarking: descrypt, traditional crypt(3) [DES 128/128 AVX-16]... (2xMPI) /^$
+Many salts:     7761K c/s real, 7761K c/s virtual
+Only one salt:  6746K c/s real, 6746K c/s virtual
+
+Benchmarking: bsdicrypt, BSDI crypt(3) ("_J9..", 725 iterations) [DES 128/128 A$
+Many salts:     249916 c/s real, 252416 c/s virtual
+Only one salt:  235520 c/s real, 235520 c/s virtual
+
+Benchmarking: md5crypt, crypt(3) $1$ [MD5 128/128 AVX 12x]... (2xMPI) -^H\^H|^H$
+Raw:    63840 c/s real, 63840 c/s virtual
+
+Benchmarking: bcrypt ("$2a$05", 32 iterations) [Blowfish 32/64 X3]... (2xMPI) -$
+Raw:    370 c/s real, 374 c/s virtual
+
+Benchmarking: scrypt (16384, 8, 1) [Salsa20/8 128/128 AVX]... (2xMPI) -^H\^H|^H$
+Raw:    5.8 c/s real, 5.8 c/s virtual
+```
+#### 4 cores
+```
+Node numbers 1-4 of 4 (MPI)
+Benchmarking: descrypt, traditional crypt(3) [DES 128/128 AVX-16]... (4xMPI) /^$
+Many salts:     13148K c/s real, 13148K c/s virtual
+Only one salt:  13893K c/s real, 14033K c/s virtual
+
+Benchmarking: bsdicrypt, BSDI crypt(3) ("_J9..", 725 iterations) [DES 128/128 A$
+Many salts:     523264 c/s real, 523264 c/s virtual
+Only one salt:  489472 c/s real, 489472 c/s virtual
+
+Benchmarking: md5crypt, crypt(3) $1$ [MD5 128/128 AVX 12x]... (4xMPI) -^H\^H|^H$
+Raw:    133824 c/s real, 133824 c/s virtual
+
+Benchmarking: bcrypt ("$2a$05", 32 iterations) [Blowfish 32/64 X3]... (4xMPI) -$
+Raw:    776 c/s real, 776 c/s virtual
+
+Benchmarking: scrypt (16384, 8, 1) [Salsa20/8 128/128 AVX]... (4xMPI) -^H\^H|^H$
+Raw:    12.5 c/s real, 12.5 c/s virtual
+```
+#### 8 cores
+```
+Node numbers 1-8 of 8 (MPI)
+Benchmarking: descrypt, traditional crypt(3) [DES 128/128 AVX-16]... (8xMPI) /^$
+Many salts:     29335K c/s real, 29631K c/s virtual
+Only one salt:  27025K c/s real, 27025K c/s virtual
+
+Benchmarking: bsdicrypt, BSDI crypt(3) ("_J9..", 725 iterations) [DES 128/128 A$
+Many salts:     1005K c/s real, 1005K c/s virtual
+Only one salt:  940800 c/s real, 940800 c/s virtual
+
+Benchmarking: md5crypt, crypt(3) $1$ [MD5 128/128 AVX 12x]... (8xMPI) -^H\^H|^H$
+Raw:    257232 c/s real, 257232 c/s virtual
+
+Benchmarking: bcrypt ("$2a$05", 32 iterations) [Blowfish 32/64 X3]... (8xMPI) -$
+Raw:    1497 c/s real, 1512 c/s virtual
+
+Benchmarking: scrypt (16384, 8, 1) [Salsa20/8 128/128 AVX]... (8xMPI) -^H\^H|^H$
+Raw:    24.1 c/s real, 24.1 c/s virtual
+```
+#### 16 cores
 ```
 Node numbers 1-16 of 16 (MPI)
 Benchmarking: descrypt, traditional crypt(3) [DES 128/128 AVX-16]... (16xMPI) /^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^HDONE
@@ -84,6 +144,7 @@ Raw:    2780 c/s real, 2780 c/s virtual
 Benchmarking: scrypt (16384, 8, 1) [Salsa20/8 128/128 AVX]... (16xMPI) -^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^H-^HDONE
 Raw:    44.0 c/s real, 44.0 c/s virtual
 ```
+#### 32 cores
 ```
 Node numbers 1-32 of 32 (MPI)
 Benchmarking: descrypt, traditional crypt(3) [DES 128/128 AVX-16]... (32xMPI) /^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^HDONE
@@ -103,6 +164,7 @@ Raw:    6048 c/s real, 6048 c/s virtual
 Benchmarking: scrypt (16384, 8, 1) [Salsa20/8 128/128 AVX]... (32xMPI) -^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^H-^HDONE
 Raw:    96.6 c/s real, 96.6 c/s virtual
 ```
+#### 64 cores
 ```
 Node numbers 1-64 of 64 (MPI)
 Benchmarking: descrypt, traditional crypt(3) [DES 128/128 AVX-16]... (64xMPI) /^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^HDONE
@@ -122,6 +184,7 @@ Raw:    12096 c/s real, 12096 c/s virtual
 Benchmarking: scrypt (16384, 8, 1) [Salsa20/8 128/128 AVX]... (64xMPI) -^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^H-^HDONE
 Raw:    192 c/s real, 194 c/s virtual
 ```
+#### 128 cores
 ```
 Node numbers 1-128 of 128 (MPI)
 Benchmarking: descrypt, traditional crypt(3) [DES 128/128 AVX-16]... (128xMPI) /^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^HDONE
@@ -141,6 +204,7 @@ Raw:    23418 c/s real, 23418 c/s virtual
 Benchmarking: scrypt (16384, 8, 1) [Salsa20/8 128/128 AVX]... (128xMPI) -^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^H-^HDONE
 Raw:    380 c/s real, 380 c/s virtual
 ```
+#### 256 cores
 ```
 Node numbers 1-256 of 256 (MPI)
 Benchmarking: descrypt, traditional crypt(3) [DES 128/128 AVX-16]... (256xMPI) /^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^HDONE
@@ -160,8 +224,9 @@ Raw:    46395 c/s real, 46395 c/s virtual
 Benchmarking: scrypt (16384, 8, 1) [Salsa20/8 128/128 AVX]... (256xMPI) -^H\^H|^H/^H-^H\^H|^H/^H-^H\^H|^H/^H-^HDONE
 Raw:    757 c/s real, 757 c/s virtual
 ```
-#### For 2 Nodes (20 cores) and 1 GPU
-
+#### Some conclusions for this test
+- Almost speed of cracking of different hash algorithms is proportional to the number of cores.
+- Cracking descrypt hash get the best result in this test.
 
 ## Building on small cluster for cracking process
 ### Installing
@@ -249,6 +314,5 @@ Node numbers 1-40 of 40 (MPI)
 phuong           (?)
 22 1g 0:00:14:07 DONE 3/3 (2018-04-29 02:54) 0.001179g/s 454.7p/s 454.7c/s 454.7C/s phevu*..phuork
 ```
-## Conclusion
 
 
