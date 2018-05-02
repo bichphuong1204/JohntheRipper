@@ -9,7 +9,7 @@ The useful of password cracker: can use to recover a forgotten password, gaining
 
 In this project, I will introduce one of the best password cracker – John the Ripper,its installation and how to run it on parallel for recover and checking crackable password purposes.
 
-## Principle
+## Knowledge
 
 ### Hashing password
 Passwords are stored as hashes rather than plain text in databases by using some special hashing algorithms, to prevent against thread. When a system get a input password, it will automatically transform that password to a set of digits with certain length (called hashes) in some rules so that that every times we input that password, we will get exactly same hash.
@@ -25,7 +25,7 @@ Some popular techniques used in Password cracking:
 - Brute force attack: This works through all possible alpha-numeric combination and try to match their hashes with checking hash.
 - Rainbow table attack: A rainbow table is a list of pre-computed hashes - the numerical value of an encrypted password, used by most systems today - and that’s the hashes of all possible password combinations for any given hashing algorithm. This work try to compare those hashes to the checking hashes 
 
-### Strength of password is various
+### Password strength
 Strength of a password is depend on its length and diversity of character type.
   - A password have 4 characters of number : 10.000 possible passwords.
   - A password have 4 characters of number, upper and lower case : 14.776.336 possible passwords.
@@ -57,7 +57,7 @@ Can be run against various encryptedpassword formats including several crypt pas
 
 ## Running John Benchmark
 ### Hardware
-2 nodes, each node : 2 x Intel(R) Xeon(R) CPU E5-2660 v2 @ 2.20GHz (20 cores total)
+16 nodes, each node : 2 x Intel(R) Xeon(R) CPU E5-2660 v2 @ 2.20GHz (20 cores total)
 NVIDIA Tesla P100 GPU
 ### Install and running
 ```
